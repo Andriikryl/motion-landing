@@ -16,6 +16,9 @@ export default function FeatureCard({
   id,
 }: FeatureCardProps) {
   const inViewFeature = useFeatureStore((state) => state.inViewFeature);
+  const setFullscreenFeatture = useFeatureStore(
+    (state) => state.setFullscreenFeature
+  );
 
   return (
     <div
@@ -26,7 +29,10 @@ export default function FeatureCard({
       )}
     >
       {children}
-      <button className="bg-black text-white rounded-xl absolute bottom-6 right-6 px-4 py-2 shadow-lg ">
+      <button
+        onClick={() => setFullscreenFeatture(id)}
+        className="bg-black text-white rounded-xl absolute bottom-6 right-6 px-4 py-2 shadow-lg "
+      >
         show me
       </button>
     </div>

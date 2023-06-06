@@ -54,7 +54,7 @@ function App() {
     <div className="mx-auto max-w-6xl px-4">
       <Hero />
       {features.map((feature) => (
-        <feature.visual key={feature.id} />
+        <feature.visual id={feature.id} key={feature.id} />
       ))}
       <div className="flex w-full gap-20 items-start">
         <div className="w-full py-[50vh]">
