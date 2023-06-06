@@ -55,6 +55,9 @@ const features = [
 function App() {
   const [scope, animate] = useAnimate();
   const fullscreenFeature = useFeatureStore((state) => state.fullscreenFeature);
+  const setFullscreenFeatture = useFeatureStore(
+    (state) => state.setFullscreenFeature
+  );
 
   useEffect(() => {
     if (fullscreenFeature) {
@@ -79,6 +82,12 @@ function App() {
         {features.map((feature) => (
           <feature.visual id={feature.id} key={feature.id} />
         ))}
+        <button
+          onClick={() => setFullscreenFeatture(null)}
+          className=" fixed bottom-6 left-1/2 -translate-x-1/2 z-10"
+        >
+          Back to side
+        </button>
         <div className="flex w-full gap-20 items-start">
           <div className="w-full py-[50vh]">
             <ul>
