@@ -1,4 +1,5 @@
 import { Hero } from "./components/Hero";
+import FeatureCard from "./components/featurs/Card";
 import FeatureTitle from "./components/featurs/Title";
 
 const features = [
@@ -56,7 +57,7 @@ function App() {
         </div>
         <div className="w-full sticky top-0 flex h-screen items-center">
           <div className="w-full aspect-square bg-gray-100 rounded-2xl">
-            div col
+            <FeatureCard gradient="from-[#f7f0ff] to-[#a78afe]"></FeatureCard>
           </div>
         </div>
       </div>
