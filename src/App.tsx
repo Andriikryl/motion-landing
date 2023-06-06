@@ -1,4 +1,5 @@
 import { Hero } from "./components/Hero";
+import FeatureTitle from "./components/featurs/Title";
 
 const features = [
   {
@@ -44,11 +45,11 @@ function App() {
     <div className="mx-auto max-w-6xl px-4">
       <Hero />
       <div className="flex w-full gap-20 items-start">
-        <div className="w-full">
+        <div className="w-full py-[50vh]">
           <ul>
             {features.map((feature) => (
               <li key={feature.id}>
-                <p className="py-16 text-5xl text-gray-300">{feature.title}</p>
+                <FeatureTitle>{feature.title}</FeatureTitle>
               </li>
             ))}
           </ul>
