@@ -23,7 +23,7 @@ export default function FeatureTitle({ children, id }: Props) {
     <p
       ref={ref}
       className={classNames(
-        "py-16 text-5xl transition-colors",
+        "feature-title py-16 text-5xl transition-colors",
         isInView ? "text-black" : "text-gray-300"
       )}
     >
