@@ -1,42 +1,49 @@
 import { Hero } from "./components/Hero";
-import FeatureCard from "./components/featurs/Card";
+import {
+  Colors,
+  Todo,
+  Availability,
+  Music,
+  SchedulingLinks,
+  Team,
+} from "./components/featurs/Card";
 import FeatureTitle from "./components/featurs/Title";
 
 const features = [
   {
     title: "Use your calendar as a todo list",
     id: "todo-list",
-    // card: Todo,
+    card: Todo,
     // visual: OtherVisual,
   },
   {
     title: "Color your calendar to organize",
     id: "colors",
-    // card: Colors,
+    card: Colors,
     // visual: OtherVisual,
   },
   {
     title: "Instantly know if someone is available",
     id: "availability",
-    // card: Availability,
+    card: Availability,
     // visual: OtherVisual,
   },
   {
     title: "Track what you listened to when",
     id: "music",
-    // card: Music,
+    card: Music,
     // visual: MusicVisual,
   },
   {
     title: "Send scheduling links guests love",
     id: "scheduling-links",
-    // card: SchedulingLinks,
+    card: SchedulingLinks,
     // visual: OtherVisual,
   },
   {
     title: "Always know what your team is up to",
     id: "team",
-    // card: Team,
+    card: Team,
     // visual: OtherVisual,
   },
 ];
@@ -56,8 +63,10 @@ function App() {
           </ul>
         </div>
         <div className="w-full sticky top-0 flex h-screen items-center">
-          <div className="w-full aspect-square bg-gray-100 rounded-2xl">
-            <FeatureCard gradient="from-[#f7f0ff] to-[#a78afe]"></FeatureCard>
+          <div className="relative w-full aspect-square bg-gray-100 rounded-2xl">
+            {features.map((feature) => (
+              <feature.card key={feature.id} />
+            ))}
           </div>
         </div>
       </div>
