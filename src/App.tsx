@@ -8,43 +8,44 @@ import {
   Team,
 } from "./components/featurs/Card";
 import FeatureTitle from "./components/featurs/Title";
+import { MusicVisual, OtherVisual } from "./components/featurs/Visual";
 
 const features = [
   {
     title: "Use your calendar as a todo list",
     id: "todo-list",
     card: Todo,
-    // visual: OtherVisual,
+    visual: OtherVisual,
   },
   {
     title: "Color your calendar to organize",
     id: "colors",
     card: Colors,
-    // visual: OtherVisual,
+    visual: OtherVisual,
   },
   {
     title: "Instantly know if someone is available",
     id: "availability",
     card: Availability,
-    // visual: OtherVisual,
+    visual: OtherVisual,
   },
   {
     title: "Track what you listened to when",
     id: "music",
     card: Music,
-    // visual: MusicVisual,
+    visual: MusicVisual,
   },
   {
     title: "Send scheduling links guests love",
     id: "scheduling-links",
     card: SchedulingLinks,
-    // visual: OtherVisual,
+    visual: OtherVisual,
   },
   {
     title: "Always know what your team is up to",
     id: "team",
     card: Team,
-    // visual: OtherVisual,
+    visual: OtherVisual,
   },
 ];
 
@@ -52,6 +53,9 @@ function App() {
   return (
     <div className="mx-auto max-w-6xl px-4">
       <Hero />
+      {features.map((feature) => (
+        <feature.visual key={feature.id} />
+      ))}
       <div className="flex w-full gap-20 items-start">
         <div className="w-full py-[50vh]">
           <ul>
