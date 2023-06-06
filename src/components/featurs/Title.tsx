@@ -8,9 +8,15 @@ type Props = {
   id: string;
 };
 
-export default function FeatureTitle({ children, id }: Props) {
+export const FeatureTitle = ({ children, id }: Props) => {
   const ref = useRef<HTMLParagraphElement>(null);
-  const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
+  const documentRef = useRef(document);
+  const isInView = useInView(ref, {
+    margin: "-50% 0px -50% 0px",
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    root: documentRef,
+  });
   const setInViewFeature = useFeatureStore((state) => state.setInViewFeature);
   const inViewFeature = useFeatureStore((state) => state.inViewFeature);
 
@@ -23,11 +29,11 @@ export default function FeatureTitle({ children, id }: Props) {
     <p
       ref={ref}
       className={classNames(
-        "feature-title py-16 text-5xl transition-colors",
+        "feature-title py-16 font-heading text-5xl transition-colors",
         isInView ? "text-black" : "text-gray-300"
       )}
     >
       {children}
     </p>
   );
-}
+};
