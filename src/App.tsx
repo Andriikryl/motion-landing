@@ -45,7 +45,13 @@ function App() {
       <Hero />
       <div className="flex w-full gap-20">
         <div className="w-full">
-          <ul></ul>
+          <ul>
+            {features.map((feature) => (
+              <li key={feature.id}>
+                <p className="py-16 text-5xl text-gray-300">{feature.title}</p>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="w-full">right col</div>
       </div>
