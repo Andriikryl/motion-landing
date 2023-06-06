@@ -57,7 +57,7 @@ function App() {
           <ul>
             {features.map((feature) => (
               <li key={feature.id}>
-                <FeatureTitle>{feature.title}</FeatureTitle>
+                <FeatureTitle id={feature.id}>{feature.title}</FeatureTitle>
               </li>
             ))}
           </ul>
@@ -65,7 +65,7 @@ function App() {
         <div className="w-full sticky top-0 flex h-screen items-center">
           <div className="relative w-full aspect-square bg-gray-100 rounded-2xl">
             {features.map((feature) => (
-              <feature.card key={feature.id} />
+              <feature.card id={feature.id} key={feature.id} />
             ))}
           </div>
         </div>
