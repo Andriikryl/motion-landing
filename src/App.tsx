@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="mx-auto max-w-6xl px-4">
       <Hero />
-      <div className="flex w-full gap-20">
+      <div className="flex w-full gap-20 items-start">
         <div className="w-full">
           <ul>
             {features.map((feature) => (
@@ -53,7 +53,11 @@ function App() {
             ))}
           </ul>
         </div>
-        <div className="w-full">right col</div>
+        <div className="w-full sticky top-0 flex h-screen items-center">
+          <div className="w-full aspect-square bg-gray-100 rounded-2xl">
+            div col
+          </div>
+        </div>
       </div>
     </div>
   );
